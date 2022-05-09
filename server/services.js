@@ -97,9 +97,8 @@ var services = function(app){
 
         })
     });
-};
-
-app.get('/read-players', function(req,res){
+    
+    app.get('/read-players', function(req,res){
     //console.log(req);
     connection.query( `SELECT * FROM players WHERE team_id = ${req.body.team_id}`, function(err, rows){    
         if(err){
@@ -110,6 +109,9 @@ app.get('/read-players', function(req,res){
         }
     }); 
 });
+};
+
+
 
 module.exports = services;
 
