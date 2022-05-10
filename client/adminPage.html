@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href ="/client/CSS/adminPage.css">
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="/client/js/adminPage.js" async></script>
+        <!-- <script src="/client/js/adminPage.js" async></script> -->
 
             <title>
             Ultimate SS Builder (Admin)
@@ -26,77 +26,70 @@
                 <button class = "buttonUser">User Page</button>
                 </a>
             
-
-        <!--This form is for the League info-->
-        <form id="league_info">
-            <label for= "league_name">league Name:</label>
-            <input id="league_name" size '90'>
-
-            <label for= "league_country">league Country:</label>
-            <input id="league_country" size '90'>
-
-            <div>
-                <button id = 'data-submit'>Submit League Info </button>
-            </div>
-    
-        </form>
         
-       
-<!--Form for the Team Info -->
-        <form id="team_info">
-            <div >
-                <label for = "team_name">Team Name: </label>
-                <input id="team_name" size '90'>
+        <div class="row">
+            <div class="col-3 mx-4">
+                <!--This form is for the League info-->
+                <form id="league_info">
+                    <div class="form-group" id="team_dropdown">
+                        <label for= "league_name">league Name:</label>
+                        <input placeholder="Enter league name" class="form-control" id="league_name" size '90'>
+                    </div>
+                    <div class="form-group">
+                        <label for= "league_country">league Country:</label>
+                        <input placeholder="Enter league country" class="form-control" id="league_country" size '90'>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id = 'data-submit'>Submit League Info </button>
+                    </div>
+                </form>
+                <!--Form for the Team Info -->
+                <form id="team_info">
+                    <div class="form-group" >
+                        <label for = "team_name">Team Name: </label>
+                        <input placeholder="Enter team name" class="form-control" id="team_name" size '90'>
+                    </div>
+                    <div class="form-group" id="league_dropdown">
+                        <label for = "league_name"> League: </label>
+                        <select class="form-control" id="Select_League">
+                            <option value="">Choose a League </option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id = 'team-submit'>Submit Team Info</button>
+                </form> 
             </div>
-            
-            
-            <div id="league_dropdown">
-                <label for = "league_name"> League: </label>
-                <select id="Select_League">
-                    <option value="">Choose a League </option>
-                </select>
+            <div class="col-3 mx-4">
+                <!--Form for the Players info-->
+                <form id="player_form">
+                    <div class="form-group">
+                        <label for = "player_name">Player Name: </label>
+                        <input placeholder="Enter player name" class="form-control" id="player_name" size '90'>
+                    </div>
+                    <div class="form-group">
+                        <label for = "player_position"> Player Position: </label>
+                        <select class="form-control" id="player_position">
+                            <option value="GK"> goalkeeper</option>
+                            <option value="RCB"> Right Central Back</option>
+                            <option value="CB"> Central Back</option>
+                            <option value="LCB"> Left Central Back</option>
+                            <option value="DR"> Defensive Right</option>
+                            <option value="DL"> Defensive Left</option>
+                            <option value="CM"> Central Midfield</option>
+                            <option value="CML"> Central Midfield Left</option>
+                            <option value="CMR"> Central Midfield Right</option>
+                            <option value="CF"> Centre-forward</option>
+                            <option value="ST"> Striker</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="team_dropdown">
+                        <label for="team_id"> Team Name: </label>
+                        <select class="form-control" id="team_id">
+                            <option value="">Choose a Team</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id='player-submit'>Submit Player Info </button>
+                </form> 
             </div>
-           
-
-            <div>
-                <button id = 'team-submit'>Submit Team Info</button>
-            </div>
-
-        </form>  
-
-    <!--Form for the Players info-->
-    <form id="player_form">
-        <label for = "player_name">Player Name: </label>
-        <input id="player_name" size '90'>
-
-        <label for = "player_position"> Player Position: </label>
-        <select id="player_position">
-
-            <option value="GK"> goalkeeper</option>
-            <option value="RCB"> Right Central Back</option>
-            <option value="CB"> Central Back</option>
-            <option value="LCB"> Left Central Back</option>
-            <option value="DR"> Defensive Right</option>
-            <option value="DL"> Defensive Left</option>
-            <option value="CM"> Central Midfield</option>
-            <option value="CML"> Central Midfield Left</option>
-            <option value="CMR"> Central Midfield Right</option>
-            <option value="CF"> Centre-forward</option>
-            <option value="ST"> Striker</option>
-             
-        </select>
-
-            <div id="team_dropdown">
-                <label for="team_id"> Team Name: </label>
-       
-                <select id="team_id">
-                    <option value="">Choose a Team</option>
-                </select>
-
-                
-            </div>
-            <button id='player-submit'>Submit Player Info </button>
-    </form> 
-    
+        </div>
     </body>
 </html>
